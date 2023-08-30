@@ -265,9 +265,7 @@ export class HaStatisticPicker extends LitElement {
         .renderer=${this._rowRenderer}
         .disabled=${this.disabled}
         .allowCustomValue=${this.allowCustomEntity}
-        .filteredItems=${this.value && this._statistics.length === 0
-          ? undefined
-          : this._statistics}
+        .items=${this._statistics}
         item-value-path="id"
         item-id-path="id"
         item-label-path="name"
@@ -305,9 +303,15 @@ export class HaStatisticPicker extends LitElement {
   private _filterChanged(ev: CustomEvent): void {
     const target = ev.target as HaComboBox;
     const filterString = ev.detail.value.toLowerCase();
-    target.filteredItems = filterString.length
-      ? fuzzyFilterSort<StatisticItem>(filterString, this._statistics)
-      : this._statistics;
+
+    if (filterString.length) {
+      target.filteredItems = fuzzyFilterSort<StatisticItem>(
+        filterString,
+        this._statistics
+      );
+    } else {
+      target.filteredItems = target.items;
+    }
   }
 
   private _setValue(value: string) {

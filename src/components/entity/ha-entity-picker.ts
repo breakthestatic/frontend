@@ -329,6 +329,7 @@ export class HaEntityPicker extends LitElement {
         .renderer=${rowRenderer}
         .required=${this.required}
         .disabled=${this.disabled}
+        item-id-path="entity_id"
         @opened-changed=${this._openedChanged}
         @value-changed=${this._valueChanged}
         @filter-changed=${this._filterChanged}
@@ -343,6 +344,10 @@ export class HaEntityPicker extends LitElement {
 
   private _openedChanged(ev: ValueChangedEvent<boolean>) {
     this._opened = ev.detail.value;
+    const selectedIndex = ev?.target?.filteredItems.findIndex(
+      ({ entity_id }) => entity_id === ev?.target?.selectedItem?.entity_id
+    );
+    ev.target._comboBox._scrollIntoView(selectedIndex);
   }
 
   private _valueChanged(ev: ValueChangedEvent<string>) {
