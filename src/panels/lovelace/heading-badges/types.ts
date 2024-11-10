@@ -1,5 +1,6 @@
 import type { ActionConfig } from "../../../data/lovelace/config/action";
 import type { Condition } from "../common/validate-condition";
+import type { TimestampRenderingFormat } from "../components/types";
 
 export type LovelaceHeadingBadgeConfig = {
   type?: string;
@@ -23,4 +24,5 @@ export interface EntityHeadingBadgeConfig extends LovelaceHeadingBadgeConfig {
   show_icon?: boolean;
   color?: string;
   tap_action?: ActionConfig;
+  format?: TimestampRenderingFormat;
 }

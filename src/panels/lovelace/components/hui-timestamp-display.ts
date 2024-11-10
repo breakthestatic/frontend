@@ -9,7 +9,7 @@ import { relativeTime } from "../../../common/datetime/relative_time";
 import { capitalizeFirstLetter } from "../../../common/string/capitalize-first-letter";
 import type { FrontendLocaleData } from "../../../data/translation";
 import type { HomeAssistant } from "../../../types";
-import type { TimestampRenderingFormat } from "./types";
+import { RELATIVE_TIME_FORMATS, type TimestampRenderingFormat } from "./types";
 
 const FORMATS: {
   [key: string]: (
@@ -22,7 +22,7 @@ const FORMATS: {
   datetime: formatDateTime,
   time: formatTime,
 };
-const INTERVAL_FORMAT = ["relative", "total"];
+const INTERVAL_FORMAT = [...RELATIVE_TIME_FORMATS, "total"];
 
 @customElement("hui-timestamp-display")
 class HuiTimestampDisplay extends LitElement {
@@ -112,10 +112,15 @@ class HuiTimestampDisplay extends LitElement {
 
   private _updateRelative(): void {
     if (this.ts && this.hass?.localize) {
-      this._relative =
-        this._format === "relative"
-          ? relativeTime(this.ts, this.hass!.locale)
-          : relativeTime(new Date(), this.hass!.locale, this.ts, false);
+      this._relative = this._format.startsWith("relative")
+        ? relativeTime(
+            this.ts,
+            this.hass!.locale,
+            undefined,
+            undefined,
+            this._format.split("_")[1]
+          )
+        : relativeTime(new Date(), this.hass!.locale, this.ts, false);
 
       this._relative = this.capitalize
         ? capitalizeFirstLetter(this._relative)

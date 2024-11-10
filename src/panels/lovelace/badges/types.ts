@@ -2,6 +2,7 @@ import type { ActionConfig } from "../../../data/lovelace/config/action";
 import type { LovelaceBadgeConfig } from "../../../data/lovelace/config/badge";
 import type { LegacyStateFilter } from "../common/evaluate-filter";
 import type { Condition } from "../common/validate-condition";
+import type { TimestampRenderingFormat } from "../components/types";
 import type { EntityFilterEntityConfig } from "../entity-rows/types";
 import type { DisplayType } from "./hui-entity-badge";
 
@@ -46,4 +47,5 @@ export interface EntityBadgeConfig extends LovelaceBadgeConfig {
    * @deprecated use `show_state`, `show_name`, `icon_type`
    */
   display_type?: DisplayType;
+  format?: TimestampRenderingFormat;
 }
