@@ -486,7 +486,67 @@
           "cleared_tampering": "cleared tampering",
           "detected_event": "{event_type} event detected",
           "detected_event_no_type": "detected an event",
-          "detected_unknown_event": "detected an unknown event"
+          "detected_unknown_event": "detected an unknown event",
+          "detected_device_classes": {
+            "battery": "[%key:ui::components::logbook::messages::was_low%]",
+            "battery_charging": "started charging",
+            "carbon_monoxide": "[%key:ui::components::logbook::messages::detected_device_class%]",
+            "cold": "[%key:ui::components::logbook::messages::detected_device_class%]",
+            "connectivity": "[%key:ui::components::logbook::messages::was_connected%]",
+            "door": "[%key:ui::components::logbook::messages::was_opened%]",
+            "garage_door": "[%key:ui::components::logbook::messages::was_opened%]",
+            "gas": "[%key:ui::components::logbook::messages::detected_device_class%]",
+            "heat": "[%key:ui::components::logbook::messages::detected_device_class%]",
+            "light": "[%key:ui::components::logbook::messages::detected_device_class%]",
+            "lock": "[%key:ui::components::logbook::messages::was_unlocked%]",
+            "moisture": "[%key:ui::components::logbook::messages::detected_device_class%]",
+            "motion": "[%key:ui::components::logbook::messages::detected_device_class%]",
+            "moving": "[%key:ui::components::logbook::messages::detected_device_class%]",
+            "occupancy": "[%key:ui::components::logbook::messages::detected_device_class%]",
+            "opening": "[%key:ui::components::logbook::messages::was_opened%]",
+            "plug": "[%key:ui::components::logbook::messages::was_plugged_in%]",
+            "power": "[%key:ui::components::logbook::messages::detected_device_class%]",
+            "presence": "[%key:ui::components::logbook::messages::was_at_home%]",
+            "problem": "[%key:ui::components::logbook::messages::detected_device_class%]",
+            "running": "[%key:ui::components::logbook::messages::detected_device_class%]",
+            "safety": "[%key:ui::components::logbook::messages::was_unsafe%]",
+            "smoke": "[%key:ui::components::logbook::messages::detected_device_class%]",
+            "sound": "[%key:ui::components::logbook::messages::detected_device_class%]",
+            "tamper": "[%key:ui::components::logbook::messages::detected_tampering%]",
+            "update": "[%key:ui::components::logbook::messages::detected_device_class%]",
+            "vibration": "[%key:ui::components::logbook::messages::detected_device_class%]",
+            "window": "[%key:ui::components::logbook::messages::was_opened%]"
+          },
+          "cleared_device_classes": {
+            "battery": "[%key:ui::components::logbook::messages::was_normal%]",
+            "battery_charging": "stopped charging",
+            "carbon_monoxide": "[%key:ui::components::logbook::messages::cleared_device_class%]",
+            "cold": "[%key:ui::components::logbook::messages::cleared_device_class%]",
+            "connectivity": "[%key:ui::components::logbook::messages::was_disconnected%]",
+            "door": "[%key:ui::components::logbook::messages::was_closed%]",
+            "garage_door": "[%key:ui::components::logbook::messages::was_closed%]",
+            "gas": "[%key:ui::components::logbook::messages::cleared_device_class%]",
+            "heat": "[%key:ui::components::logbook::messages::cleared_device_class%]",
+            "light": "[%key:ui::components::logbook::messages::cleared_device_class%]",
+            "lock": "[%key:ui::components::logbook::messages::was_locked%]",
+            "moisture": "[%key:ui::components::logbook::messages::cleared_device_class%]",
+            "motion": "[%key:ui::components::logbook::messages::cleared_device_class%]",
+            "moving": "[%key:ui::components::logbook::messages::cleared_device_class%]",
+            "occupancy": "[%key:ui::components::logbook::messages::cleared_device_class%]",
+            "opening": "[%key:ui::components::logbook::messages::was_closed%]",
+            "plug": "[%key:ui::components::logbook::messages::was_unplugged%]",
+            "power": "[%key:ui::components::logbook::messages::cleared_device_class%]",
+            "presence": "[%key:ui::components::logbook::messages::was_away%]",
+            "problem": "[%key:ui::components::logbook::messages::cleared_device_class%]",
+            "running": "[%key:ui::components::logbook::messages::cleared_device_class%]",
+            "safety": "[%key:ui::components::logbook::messages::was_safe%]",
+            "smoke": "[%key:ui::components::logbook::messages::cleared_device_class%]",
+            "sound": "[%key:ui::components::logbook::messages::cleared_device_class%]",
+            "tamper": "[%key:ui::components::logbook::messages::cleared_tampering%]",
+            "update": "[%key:ui::components::logbook::messages::cleared_device_class%]",
+            "vibration": "[%key:ui::components::logbook::messages::cleared_device_class%]",
+            "window": "[%key:ui::components::logbook::messages::was_closed%]"
+          }
         }
       },
       "entity": {
@@ -1029,7 +1089,9 @@
         "temperature_down": "Decrease temperature"
       },
       "yaml-editor": {
-        "copy_to_clipboard": "[%key:ui::panel::config::automation::editor::copy_to_clipboard%]"
+        "copy_to_clipboard": "[%key:ui::panel::config::automation::editor::copy_to_clipboard%]",
+        "error": "Error in parsing YAML: {reason}",
+        "error_location": "line: {line}, column: {column}"
       },
       "state-content-picker": {
         "state": "State",
@@ -1277,6 +1339,10 @@
             "button": "[%key:ui::dialogs::more_info_control::cover::switch_mode::button%]",
             "position": "[%key:ui::dialogs::more_info_control::cover::switch_mode::position%]"
           }
+        },
+        "camera": {
+          "download_snapshot": "Download snapshot",
+          "failed_to_download": "Failed to download snapshot. Please check the logs for more information."
         }
       },
       "entity_registry": {
@@ -1546,7 +1612,9 @@
           "confirm_delete": "Do you want to delete this item?",
           "edit_schedule_block": "Edit schedule block",
           "start": "Start",
-          "end": "End"
+          "end": "End",
+          "data": "Additional data",
+          "advanced_settings": "Advanced settings"
         },
         "template": {
           "time": "[%key:ui::panel::developer-tools::tabs::templates::time%]",
@@ -2343,7 +2411,8 @@
             },
             "create_helper": "Create helper",
             "no_helpers": "Looks like you don't have any helpers yet!",
-            "search": "Search {number} helpers"
+            "search": "Search {number} helpers",
+            "error_information": "Error information"
           },
           "dialog": {
             "create": "Create",
@@ -2879,6 +2948,7 @@
             "search_in": "Search · {group}",
             "unknown_entity": "unknown entity",
             "edit_unknown_device": "Editor not available for unknown device",
+            "switch_ui_yaml_error": "There are currently YAML errors in the automation, and it cannot be parsed. Switching to UI mode may cause pending changes to be lost. Press cancel to correct any errors before proceeding to prevent loss of pending changes, or continue if you are sure.",
             "triggers": {
               "name": "Triggers",
               "header": "When",
@@ -2927,7 +2997,8 @@
                   "before": "Before",
                   "after": "After",
                   "description": {
-                    "picker": "When a calendar event starts or ends."
+                    "picker": "When a calendar event starts or ends.",
+                    "full": "When{offsetChoice, select, \n before { it's {offset} before}\n after { it's {offset} after}\n other {}\n} a calendar event{eventChoice, select, \n start { starts}\n end { ends}\n other { starts or ends}\n}{hasCalendar, select, \n true { in {calendar}}\n other {}\n}"
                   }
                 },
                 "device": {
@@ -3174,7 +3245,7 @@
                   "description": {
                     "picker": "Test if multiple conditions are true.",
                     "no_conditions": "If multiple conditions match",
-                    "full": "If {count} {count, plural,\n one {condition match}\n other {conditions matches}\n}"
+                    "full": "If {count} {count, plural,\n one {condition matches}\n other {conditions match}\n}"
                   }
                 },
                 "device": {
@@ -3222,7 +3293,7 @@
                   "state": "[%key:ui::panel::config::automation::editor::triggers::type::state::label%]",
                   "description": {
                     "picker": "If an entity (or attribute) is in a specific state.",
-                    "no_entity": "Confirm state",
+                    "no_entity": "If state confirmed",
                     "full": "If{hasAttribute, select, \n true { {attribute} of}\n other {}\n} {numberOfEntities, plural,\n =0 {an entity is}\n one {{entities} is}\n other {{entities} are}\n} {numberOfStates, plural,\n =0 {a state}\n other {{states}}\n}{hasDuration, select, \n true { for {duration}} \n other {}\n }"
                   }
                 },
@@ -3285,7 +3356,7 @@
                   "zone": "[%key:ui::panel::config::automation::editor::triggers::type::zone::label%]",
                   "description": {
                     "picker": "If someone (or something) is in a zone.",
-                    "full": "Confirm {entity} {numberOfEntities, plural,\n one {is}\n other {are}\n} in {zone} {numberOfZones, plural,\n one {zone} \n other {zones}\n} "
+                    "full": "If {entity} {numberOfEntities, plural,\n one {is}\n other {are}\n} in {zone} {numberOfZones, plural,\n one {zone} \n other {zones}\n}"
                   }
                 }
               }
@@ -3366,7 +3437,7 @@
                   "label": "Wait for time to pass (delay)",
                   "delay": "Duration",
                   "description": {
-                    "picker": "Wait some time to perform a sequence of actions.",
+                    "picker": "Wait some time before continuing the sequence of actions.",
                     "full": "Delay {duration}",
                     "duration_string": "for {string}",
                     "duration_template": "based on a template",
@@ -3471,7 +3542,7 @@
                   "sequence": "Actions",
                   "description": {
                     "picker": "Choose what to do based on conditions (Similar to If-Then, but more powerful).",
-                    "full": "Choose between {number} {number, plural,\n one {action}\n other{actions}\n}",
+                    "full": "Choose {number, plural,\n one {an action}\n other{between {number} actions}\n}",
                     "no_action": "Choose an action"
                   }
                 },
@@ -4959,12 +5030,24 @@
             "parameter_is_read_only": "This parameter is read-only.",
             "between_min_max": "Between {min} and {max}",
             "error_not_in_range": "Value must be between {min} and {max}",
+            "error_required": "{entity} is required",
             "error_device_not_found": "Device not found",
             "set_param_accepted": "The parameter has been updated.",
             "set_param_queued": "The parameter change has been queued, and will be updated when the device wakes up.",
             "set_param_error": "An error occurred.",
             "parameter": "Parameter",
             "bitmask": "Bitmask",
+            "size": "Size",
+            "value": "Value",
+            "format": "Format",
+            "custom_config": "Custom configuration",
+            "custom_config_description": "You can use this section to get/set custom configuration parameters for your device. This is useful when working with devices that are not fully supported.",
+            "get_value": "Get value",
+            "set_value": "Set value",
+            "signed": "Signed",
+            "unsigned": "Unsigned",
+            "enumerated": "Enumerated",
+            "bitfield": "Bitfield",
             "reset_to_default": {
               "button_label": "Reset to default configuration",
               "dialog": {
@@ -5183,6 +5266,20 @@
                 "start_transition": "Start transition",
                 "stop_transition": "Stop transition",
                 "control_failed": "Failed to control transition. {error}"
+              },
+              "color_switch": {
+                "color_component": "Color component",
+                "colors": {
+                  "0": "Warm White",
+                  "1": "Cold White",
+                  "2": "Red",
+                  "3": "Green",
+                  "4": "Blue",
+                  "5": "Amber",
+                  "6": "Cyan",
+                  "7": "Purple",
+                  "8": "Index"
+                }
               }
             }
           }
@@ -6043,6 +6140,10 @@
                 "change": "Change"
               },
               "chart_type": "Chart type",
+              "chart_type_labels": {
+                "line": "Line",
+                "bar": "Bar"
+              },
               "periods": {
                 "hour": "Hour",
                 "day": "Day",
